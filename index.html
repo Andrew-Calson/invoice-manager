@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Manager</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="./css/style.css"></link>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div id="app">
+    <table-header></table-header>
+    <invoice-list
+      v-for="(invoice, index) in invoices"
+      :invoice="invoice"
+      :key="index"
+      @save-data="saveData"
+      @delete-data="deleteData"></invoice-list>
+  </div>
+
+  <script src="invoices.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
